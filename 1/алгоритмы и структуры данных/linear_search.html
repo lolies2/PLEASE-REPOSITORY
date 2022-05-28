@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoCUMent</title>
+</head>
+
+<body>
+
+    <script>
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+            array.push(Math.floor(Math.random() * i));
+        }
+
+        let count = 0;
+
+        function linearSearch(arr, n) {
+            let res = -1;
+
+            for (let i = 0; i < arr.length; i++) {
+                count++;
+                if (n === arr[i]) {
+                    res = i;
+                    break;
+                }
+            }
+
+            return res;
+        }
+
+
+        console.log(array);
+        console.log(linearSearch(array, 10));
+        console.log("att", count);
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

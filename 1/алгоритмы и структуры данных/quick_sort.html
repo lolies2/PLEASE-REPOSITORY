@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoCUMent</title>
+</head>
+
+<body>
+    <script>
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+            array.push(Math.floor(Math.random() * i));
+        }
+
+        let count = 0;
+
+        function factorial(n) {
+            if (n == 1) return 1;
+            return n * factorial(n - 1);
+
+        }
+        function quickSort(arr) {
+            count++;
+            if (arr.length <= 1) return arr;
+            let pivoIndex = Math.floor(arr.length / 2);
+            let pivoElement = arr[pivoIndex];
+
+            let lessElement = [];
+            let greaterElement = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (i == pivoIndex) continue;
+                if (arr[i] < pivoElement) lessElement.push(arr[i]);
+
+                else greaterElement.push(arr[i]);
+            }
+
+            return [...quickSort(lessElement),
+                pivoElement,
+            ...quickSort(greaterElement)];
+        }
+
+console.log(array)
+console.log(count)
+console.log(quickSort(array));
+    </script>
+</body>
+
+</html>

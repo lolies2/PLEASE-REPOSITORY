@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(closest-side at 10% 10%,
+            rgb(240, 255, 108),
+            rgb(230, 135, 27) 1000%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 150rem;
+    overflow: hidden;
+}
+
+.swing {
+    width: 40rem;
+    height: 20rem;
+    background-color: rgb(253, 168, 71);
+    transform: rotateX(70deg) rotateY(5deg) rotateZ(-40deg);
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    transform-origin: top;
+}
+
+.swing::before {
+    content: "";
+    width: 1rem;
+    height: 100%;
+    background-color: rgb(230, 135, 27);
+    position: absolute;
+    transform: rotateY(90deg);
+    transform-origin: left;
+}
+
+.swing::after {
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background-color: rgb(255, 183, 100);
+    position: absolute;
+    bottom: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+
+@keyframes anime {
+    0% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(-40deg) translateY(1000rem);
+    }
+
+    20% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(100rem);
+    }
+
+    25% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(10rem);
+    }
+
+    35%, 40% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(31rem);
+    }
+
+    50% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(-60rem);
+    }
+
+    55% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(-50rem);
+    }
+
+    65%, 70% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(-80rem);
+    }
+
+    100% {
+        transform:
+            rotateX(70deg) rotateY(10deg) rotateZ(5deg) translateY(-100rem);
+    }
+}
+
+.rope {
+    height: 40rem;
+    width: 0.3rem;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transform: rotateX(90deg) rotateY(90deg) rotateZ(20deg);
+    transform-origin: top;
+}
+
+.rope-1 {
+    top: 10rem;
+    left: 2.5rem;
+}
+
+.rope-2 {
+    top: 10rem;
+    left: 35.5rem;
+}
+
+.rope::before {
+    content: "";
+    width: 0.3rem;
+    height: 23rem;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transform:  rotateY(0deg);
+    transform-origin: top;
+}
+
+.rope::after {
+    content: "";
+    width: 0.3rem;
+    height: 23rem;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transform:  rotateY(0rem) ;
+    transform-origin: bottom;
+}
+.swing-1{
+    animation: anime 10s infinite ease-out;
+}

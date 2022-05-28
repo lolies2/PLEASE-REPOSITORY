@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // '07:05PM' = 19:05
+        // '07:05AM' = 07:05
+        // '12:00AM' = 00:00
+        // '12:00PM' = 12:00
+
+        function convertTime(str) {
+            let hour = str.substring(0, 2);
+            let end = str.substring(2, 5);
+            let t = str.substring(5,6);
+            let res = "";
+
+            hour = parseInt(hour);
+
+            if (t == 'A' && hour != 12) {
+                res = hour + end;
+            } 
+            else if (t == 'A' && hour == 12) {
+                res = '00'+ end;
+            } 
+            else if (t == 'P' && hour != 12) {
+                res = (hour + 12) + end;
+            } 
+            else if (t == 'P' && hour == 12) {
+                res = '12'+ end;
+            }
+
+            return res;
+
+            //console.log(hour, end, t);
+        }
+
+        console.log(convertTime('07:05AM'));
+
+
+    </script>
+</body>
+</html>

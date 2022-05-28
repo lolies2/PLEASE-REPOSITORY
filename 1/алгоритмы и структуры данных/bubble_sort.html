@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+
+<body>
+
+    <script>
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+            array.push(Math.floor(Math.random() * i));
+        }
+
+        let count = 0;
+        // O(n*n)
+        function bubbleSort(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let k = 0; k < arr.length; k++) {
+                    if (arr[k + 1] < arr[k]) {
+                        let temp = arr[k];
+                        arr[k] = arr[k + 1];
+                        arr[k + 1] = temp;
+                    }
+                    count++;
+                }
+            }
+            return arr;
+        }
+
+        console.log("Нет сортировки ", array);
+        console.log("После сортировки", bubbleSort(array));
+        console.log(count);
+
+    </script>
+
+</body>
+
+</html>

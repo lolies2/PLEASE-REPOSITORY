@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+            array.push(Math.floor(Math.random() * i));
+        }
+
+        let count = 0;
+
+        array.sort( (a, b) => a - b);
+
+        function binarySearch(a, n) {
+            let res = -1
+            let start = 0;
+            let end = a.length - 1;
+            let mid;
+            while (start <= end) {
+                count++;
+                mid = Math.floor((start + end) / 2);
+                if (n === a[mid]) return mid;
+                if (n < a[mid]) end = mid - 1;
+                if (n > a[mid]) start = mid + 1;
+            
+            }
+            return res;
+        }
+
+console.log(array);
+console.log(binarySearch(array, 10));
+console.log("att", count);
+
+
+    </script>
+</body>
+
+</html>
